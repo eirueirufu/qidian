@@ -115,14 +115,14 @@ class ShelfState extends State<Shelf> {
             actions: [
               Text(
                 "管理",
-                style: TextStyle(fontSize: 10),
+                style: TextStyle(fontSize: 12),
               ),
               SizedBox(
                 width: 12,
               ),
               Text(
                 "筛选",
-                style: TextStyle(fontSize: 10),
+                style: TextStyle(fontSize: 12),
               ),
               SizedBox(
                 width: 8,

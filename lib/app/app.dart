@@ -10,6 +10,7 @@ class App extends StatefulWidget {
 
 class AppState extends State<App> with SingleTickerProviderStateMixin {
   late final TabController _tabController;
+  int selectedIndex = 0;
 
   @override
   void initState() {
@@ -28,46 +29,47 @@ class AppState extends State<App> with SingleTickerProviderStateMixin {
     return MaterialApp(
       title: '仿起点',
       theme: ThemeData(
-        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
       home: Scaffold(
-        body: SafeArea(
-          child: TabBarView(
-            controller: _tabController,
-            children: const [
-              Shelf(),
-              Text("todo"),
-              Text("todo"),
-              Text("todo"),
-              Text("todo"),
-            ],
+          body: SafeArea(
+            child: Shelf(),
           ),
-        ),
-        bottomNavigationBar: TabBar(controller: _tabController, tabs: const [
-          Tab(
-            icon: Icon(Icons.shelves),
-            text: "书架",
-          ),
-          Tab(
-            icon: Icon(Icons.diamond),
-            text: "精选",
-          ),
-          Tab(
-            icon: Icon(Icons.headphones),
-            text: "听书",
-          ),
-          Tab(
-            icon: Icon(Icons.recommend_outlined),
-            text: "发现",
-          ),
-          Tab(
-            icon: Icon(Icons.account_circle_rounded),
-            text: "我",
-          ),
-        ]),
-        // body: MyHomePage(title: 'Flutter Demo Home Page'),
-      ),
+          bottomNavigationBar: NavigationBar(
+              selectedIndex: selectedIndex,
+              onDestinationSelected: (value) {
+                setState(() {
+                  selectedIndex = value;
+                });
+              },
+              destinations: [
+                NavigationDestination(
+                  icon: Icon(Icons.shelves),
+                  label: '书架',
+                  selectedIcon: Icon(Icons.shelves),
+                ),
+                NavigationDestination(
+                  icon: Icon(Icons.diamond),
+                  label: '精选',
+                  selectedIcon: Icon(Icons.diamond),
+                ),
+                NavigationDestination(
+                  icon: Icon(Icons.headphones),
+                  label: '听书',
+                  selectedIcon: Icon(Icons.headphones),
+                ),
+                NavigationDestination(
+                  icon: Icon(Icons.recommend_outlined),
+                  label: '听书',
+                  selectedIcon: Icon(Icons.recommend_outlined),
+                ),
+                NavigationDestination(
+                  icon: Icon(Icons.account_circle_rounded),
+                  label: '我',
+                  selectedIcon: Icon(Icons.account_circle_rounded),
+                )
+              ])),
     );
   }
 }
