@@ -62,29 +62,34 @@ class ShelfState extends State<Shelf> {
         child: CustomScrollView(slivers: [
           SliverToBoxAdapter(
             child: ListTile(
-                leading: Container(
-                  width: 60,
-                  child: Placeholder(),
-                ),
-                trailing: Container(
-                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+              leading: AspectRatio(aspectRatio: 3 / 4, child: Placeholder()),
+              title: Text(
+                "文字文字文字文字文字",
+                style: TextStyle(fontSize: 14),
+                overflow: TextOverflow.ellipsis,
+              ),
+              subtitle: Row(
+                  children: List<Widget>.generate(3, (index) {
+                return Container(
+                  padding: EdgeInsets.all(2),
+                  margin: EdgeInsets.all(2),
+                  child: Text(
+                    "tag",
+                    style: TextStyle(fontSize: 12),
+                  ),
                   decoration: BoxDecoration(
-                      color: Colors.black12,
-                      borderRadius: BorderRadius.all(Radius.circular(16))),
-                  child: Text("签到"),
-                ),
-                title: Text(
-                  "文字文字文字文字文字",
-                  style: TextStyle(fontSize: 14),
-                  overflow: TextOverflow.ellipsis,
-                ),
-                subtitle: Row(
-                  children: [
-                    Chip(label: Text("tag")),
-                    Chip(label: Text("tag")),
-                    Chip(label: Text("tag"))
-                  ],
-                )),
+                      border: Border.all(),
+                      borderRadius: BorderRadius.all(Radius.circular(8))),
+                );
+              })),
+              trailing: Container(
+                padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                decoration: BoxDecoration(
+                    color: Colors.black12,
+                    borderRadius: BorderRadius.all(Radius.circular(16))),
+                child: Text("签到"),
+              ),
+            ),
           ),
           SliverAppBar(
             pinned: true,
@@ -127,50 +132,31 @@ class ShelfState extends State<Shelf> {
           SliverList.builder(
               itemCount: 20,
               itemBuilder: (context, index) {
-                return Container(
-                  padding: EdgeInsets.all(8),
-                  height: 100,
-                  child: Row(
+                return ListTile(
+                  leading:
+                      AspectRatio(aspectRatio: 3 / 4, child: Placeholder()),
+                  title: Text(
+                    "文字文字文字文字文字",
+                    style: TextStyle(fontSize: 16),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Placeholder(
-                        fallbackWidth: 60,
+                      Text(
+                        "文字文字文字文字文字",
+                        style: TextStyle(fontSize: 12, color: Colors.black54),
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(
-                        width: 8,
+                      Text(
+                        "文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字",
+                        style: TextStyle(fontSize: 12, color: Colors.black54),
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      Expanded(
-                          child: Container(
-                        padding: EdgeInsets.all(8),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "文字文字文字文字文字",
-                              style: TextStyle(fontSize: 16),
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            Text(
-                              "文字文字文字文字文字",
-                              style: TextStyle(
-                                  fontSize: 12, color: Colors.black54),
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            Text(
-                              "文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字",
-                              style: TextStyle(
-                                  fontSize: 12, color: Colors.black54),
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ],
-                        ),
-                      )),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Column(
-                        children: [Icon(Icons.more_horiz)],
-                      )
                     ],
+                  ),
+                  trailing: Column(
+                    children: [Icon(Icons.more_horiz)],
                   ),
                 );
               })
