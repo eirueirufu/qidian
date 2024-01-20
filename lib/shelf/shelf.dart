@@ -68,20 +68,23 @@ class ShelfState extends State<Shelf> {
                 style: TextStyle(fontSize: 14),
                 overflow: TextOverflow.ellipsis,
               ),
-              subtitle: Row(
-                  children: List<Widget>.generate(3, (index) {
-                return Container(
-                  padding: EdgeInsets.all(2),
-                  margin: EdgeInsets.all(2),
-                  child: Text(
-                    "tag",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                  decoration: BoxDecoration(
-                      border: Border.all(),
-                      borderRadius: BorderRadius.all(Radius.circular(8))),
-                );
-              })),
+              subtitle: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                    children: List<Widget>.generate(10, (index) {
+                  return Container(
+                    padding: EdgeInsets.all(2),
+                    margin: EdgeInsets.all(2),
+                    child: Text(
+                      "tag",
+                      style: TextStyle(fontSize: 12),
+                    ),
+                    decoration: BoxDecoration(
+                        border: Border.all(),
+                        borderRadius: BorderRadius.all(Radius.circular(8))),
+                  );
+                })),
+              ),
               trailing: Container(
                 padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
                 decoration: BoxDecoration(
