@@ -258,11 +258,12 @@ class RecommentState extends State<Recommend> {
                       ),
                     ),
                     DecoratedSliver(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        sliver: SliverMainAxisGroup(slivers: [
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      sliver: SliverMainAxisGroup(
+                        slivers: [
                           SliverAppBar(
                             backgroundColor: Colors.transparent,
                             title: TabBar(
@@ -285,54 +286,61 @@ class RecommentState extends State<Recommend> {
                                 ]),
                           ),
                           SliverPadding(
-                            padding: EdgeInsets.all(8),
-                            sliver: SliverGrid.count(
-                              crossAxisCount: 2,
-                              childAspectRatio: 3,
-                              children: List.generate(
-                                  10,
-                                  (index) => Container(
-                                        padding: EdgeInsets.all(8),
-                                        child: Row(
-                                          children: [
-                                            Align(
-                                              alignment: Alignment.topLeft,
-                                              child: Text(
-                                                "$index",
-                                              ),
+                            padding: EdgeInsets.symmetric(horizontal: 8),
+                            sliver: SliverToBoxAdapter(
+                              child: LayoutBuilder(
+                                builder: (context, constraints) => Wrap(
+                                  children: List.generate(
+                                    10,
+                                    (index) => Container(
+                                      width: constraints.minWidth / 2,
+                                      padding: EdgeInsets.all(8),
+                                      child: Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "$index",
+                                            style: TextStyle(fontSize: 16),
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                          SizedBox(
+                                            width: 8,
+                                          ),
+                                          Expanded(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  "文字文字文字文字文字",
+                                                  style:
+                                                      TextStyle(fontSize: 16),
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                ),
+                                                Text(
+                                                  "文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字",
+                                                  style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Colors.black54),
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                )
+                                              ],
                                             ),
-                                            SizedBox(
-                                              width: 8,
-                                            ),
-                                            Expanded(
-                                              child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    "文字文字文字文字文字",
-                                                    style:
-                                                        TextStyle(fontSize: 16),
-                                                    overflow:
-                                                        TextOverflow.ellipsis,
-                                                  ),
-                                                  Text(
-                                                    "文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字",
-                                                    style: TextStyle(
-                                                        fontSize: 12,
-                                                        color: Colors.black54),
-                                                    overflow:
-                                                        TextOverflow.ellipsis,
-                                                  )
-                                                ],
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      )),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ).toList(),
+                                ),
+                              ),
                             ),
-                          )
-                        ])),
+                          ),
+                        ],
+                      ),
+                    ),
                     SliverToBoxAdapter(
                       child: Container(
                         padding: EdgeInsets.all(12),
