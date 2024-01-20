@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qidian/recommend/recommend.dart';
 import 'package:qidian/shelf/shelf.dart';
 
 class App extends StatefulWidget {
@@ -9,19 +10,16 @@ class App extends StatefulWidget {
 }
 
 class AppState extends State<App> with SingleTickerProviderStateMixin {
-  late final TabController _tabController;
-  int selectedIndex = 0;
+  int selectedIndex = 1;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 5, vsync: this);
   }
 
   @override
   void dispose() {
     super.dispose();
-    _tabController.dispose();
   }
 
   @override
@@ -34,7 +32,10 @@ class AppState extends State<App> with SingleTickerProviderStateMixin {
       ),
       home: Scaffold(
           body: SafeArea(
-            child: Shelf(),
+            child: IndexedStack(
+              index: selectedIndex,
+              children: [Shelf(), Recommend()],
+            ),
           ),
           bottomNavigationBar: NavigationBar(
               selectedIndex: selectedIndex,
