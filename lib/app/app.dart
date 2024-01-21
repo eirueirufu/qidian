@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qidian/recommend/recommend.dart';
+import 'package:qidian/rcmd/rcmd.dart';
 import 'package:qidian/shelf/shelf.dart';
 
 class App extends StatefulWidget {
