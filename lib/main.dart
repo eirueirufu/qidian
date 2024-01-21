@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:qidian/app/app.dart';
 
 void main() {
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   SystemUiOverlayStyle systemUiOverlayStyle = const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
     statusBarIconBrightness: Brightness.dark,
