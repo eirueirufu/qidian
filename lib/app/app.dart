@@ -18,11 +18,6 @@ class AppState extends State<App> with SingleTickerProviderStateMixin {
   }
 
   @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '仿起点',
@@ -35,8 +30,8 @@ class AppState extends State<App> with SingleTickerProviderStateMixin {
           child: IndexedStack(
             index: selectedIndex,
             children: [
-              Shelf(),
-              Recommend(),
+              const Shelf(),
+              const Recommend(),
               Container(),
               Container(),
               Container(),
@@ -52,7 +47,7 @@ class AppState extends State<App> with SingleTickerProviderStateMixin {
               },
             );
           },
-          destinations: [
+          destinations: const [
             NavigationDestination(
               icon: Icon(Icons.shelves),
               label: '书架',

@@ -8,7 +8,7 @@ class RcmdNew extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       color: Colors.black12,
       child: CustomScrollView(
         slivers: [
@@ -18,7 +18,7 @@ class RcmdNew extends StatelessWidget {
             childAspectRatio: 4 / 3,
             children: [
               Container(
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   color: Colors.white,
@@ -26,14 +26,14 @@ class RcmdNew extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "新书种草 >",
                       style: TextStyle(
                         overflow: TextOverflow.ellipsis,
                         fontSize: 14,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 8,
                     ),
                     Expanded(
@@ -42,7 +42,7 @@ class RcmdNew extends StatelessWidget {
                         children: List.generate(
                           5,
                           (index) => index % 2 == 0
-                              ? Flexible(
+                              ? const Flexible(
                                   child: Column(
                                     children: [
                                       Expanded(
@@ -61,7 +61,7 @@ class RcmdNew extends StatelessWidget {
                                     ],
                                   ),
                                 )
-                              : SizedBox(
+                              : const SizedBox(
                                   width: 8,
                                 ),
                         ),
@@ -74,17 +74,17 @@ class RcmdNew extends StatelessWidget {
                 children: List.generate(
                   3,
                   (index) => index % 2 == 1
-                      ? SizedBox(
+                      ? const SizedBox(
                           height: 8,
                         )
                       : Expanded(
                           child: Container(
-                            padding: EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
                               color: Colors.white,
                             ),
-                            child: Row(
+                            child: const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Flexible(
@@ -97,8 +97,9 @@ class RcmdNew extends StatelessWidget {
                                       Text(
                                         "三江好书",
                                         style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold),
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                       SizedBox(
                                         height: 4,
@@ -106,9 +107,10 @@ class RcmdNew extends StatelessWidget {
                                       Text(
                                         "最佳男生新书",
                                         style: TextStyle(
-                                            fontSize: 12,
-                                            color: Colors.black54),
-                                      )
+                                          fontSize: 12,
+                                          color: Colors.black54,
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -127,7 +129,7 @@ class RcmdNew extends StatelessWidget {
               ),
             ],
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(
               height: 8,
             ),
@@ -139,7 +141,7 @@ class RcmdNew extends StatelessWidget {
             ),
             sliver: SliverMainAxisGroup(
               slivers: [
-                SliverAppBar(
+                const SliverAppBar(
                   backgroundColor: Colors.transparent,
                   title: Text(
                     "精品新书",
@@ -149,7 +151,7 @@ class RcmdNew extends StatelessWidget {
                 SliverList.builder(
                   itemCount: 3,
                   itemBuilder: (context, index) {
-                    return ListTile(
+                    return const ListTile(
                       leading: AspectRatio(
                         aspectRatio: 3 / 4,
                         child: Placeholder(),
@@ -182,11 +184,11 @@ class RcmdNew extends StatelessWidget {
                       ),
                     );
                   },
-                )
+                ),
               ],
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(
               height: 8,
             ),
@@ -198,7 +200,7 @@ class RcmdNew extends StatelessWidget {
             ),
             sliver: SliverToBoxAdapter(
               child: Container(
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -207,7 +209,7 @@ class RcmdNew extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8),
                         color: Colors.black12,
                       ),
-                      child: Padding(
+                      child: const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 4),
                         child: Text(
                           "你订阅过的作家有新书",
@@ -215,10 +217,10 @@ class RcmdNew extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 8,
                     ),
-                    Text(
+                    const Text(
                       "文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字字文字文字文字字文字文字文字字文字文字文字字文字文字文字",
                       maxLines: 2,
                       style: TextStyle(
@@ -226,7 +228,7 @@ class RcmdNew extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 8,
                     ),
                     Row(
@@ -234,15 +236,15 @@ class RcmdNew extends StatelessWidget {
                         Container(
                           width: 30,
                           alignment: Alignment.center,
-                          child: AspectRatio(
+                          child: const AspectRatio(
                             aspectRatio: 3 / 4,
                             child: Placeholder(),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 8,
                         ),
-                        Expanded(
+                        const Expanded(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -267,7 +269,7 @@ class RcmdNew extends StatelessWidget {
                         ),
                         ElevatedButton(
                           onPressed: () {},
-                          child: Text(
+                          child: const Text(
                             "阅读",
                             style: TextStyle(
                               fontSize: 12,
@@ -282,7 +284,7 @@ class RcmdNew extends StatelessWidget {
               ),
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(
               height: 8,
             ),
@@ -294,7 +296,7 @@ class RcmdNew extends StatelessWidget {
             ),
             sliver: SliverMainAxisGroup(
               slivers: [
-                SliverAppBar(
+                const SliverAppBar(
                   backgroundColor: Colors.transparent,
                   title: Text(
                     "新书入库",
@@ -304,7 +306,7 @@ class RcmdNew extends StatelessWidget {
                 SliverList.builder(
                   itemCount: 3,
                   itemBuilder: (context, index) {
-                    return ListTile(
+                    return const ListTile(
                       leading: AspectRatio(
                         aspectRatio: 3 / 4,
                         child: Placeholder(),
@@ -337,11 +339,11 @@ class RcmdNew extends StatelessWidget {
                       ),
                     );
                   },
-                )
+                ),
               ],
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(
               height: 8,
             ),
@@ -353,7 +355,7 @@ class RcmdNew extends StatelessWidget {
             ),
             sliver: SliverMainAxisGroup(
               slivers: [
-                SliverAppBar(
+                const SliverAppBar(
                   backgroundColor: Colors.transparent,
                   title: Text(
                     "新书上架",
@@ -363,7 +365,7 @@ class RcmdNew extends StatelessWidget {
                 SliverList.builder(
                   itemCount: 3,
                   itemBuilder: (context, index) {
-                    return ListTile(
+                    return const ListTile(
                       leading: AspectRatio(
                         aspectRatio: 3 / 4,
                         child: Placeholder(),
@@ -396,15 +398,15 @@ class RcmdNew extends StatelessWidget {
                       ),
                     );
                   },
-                )
+                ),
               ],
             ),
           ),
           SliverToBoxAdapter(
             child: Container(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 "个性化推荐",
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
               ),
@@ -417,7 +419,7 @@ class RcmdNew extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
                 color: Colors.white,
               ),
-              child: Column(
+              child: const Column(
                 children: [
                   ListTile(
                     leading:
@@ -446,7 +448,7 @@ class RcmdNew extends StatelessWidget {
                 ],
               ),
             ),
-            separatorBuilder: (context, index) => SizedBox(
+            separatorBuilder: (context, index) => const SizedBox(
               height: 8,
             ),
           ),

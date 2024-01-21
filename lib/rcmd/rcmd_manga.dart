@@ -8,10 +8,10 @@ class RcmdManga extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: AspectRatio(
               aspectRatio: 16 / 9,
               child: Placeholder(),
@@ -19,7 +19,7 @@ class RcmdManga extends StatelessWidget {
           ),
           SliverMainAxisGroup(
             slivers: [
-              SliverAppBar(
+              const SliverAppBar(
                 title: Text("小编精选"),
               ),
               SliverGrid.count(
@@ -29,7 +29,7 @@ class RcmdManga extends StatelessWidget {
                 childAspectRatio: 3 / 4,
                 children: List.generate(
                   4,
-                  (index) => Column(
+                  (index) => const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
@@ -57,7 +57,7 @@ class RcmdManga extends StatelessWidget {
           ),
           SliverMainAxisGroup(
             slivers: [
-              SliverAppBar(
+              const SliverAppBar(
                 title: Text("新书强推"),
               ),
               SliverGrid.count(
@@ -67,7 +67,7 @@ class RcmdManga extends StatelessWidget {
                 childAspectRatio: 3 / 5,
                 children: List.generate(
                   6,
-                  (index) => Column(
+                  (index) => const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
@@ -101,7 +101,7 @@ class RcmdManga extends StatelessWidget {
           ),
           SliverMainAxisGroup(
             slivers: [
-              SliverAppBar(
+              const SliverAppBar(
                 title: Text(
                   "文字文字文字",
                 ),
@@ -114,26 +114,26 @@ class RcmdManga extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: AspectRatio(
+                      child: const AspectRatio(
                         aspectRatio: 16 / 9,
                         child: Placeholder(),
                       ),
                     ),
-                    Text(
+                    const Text(
                       "文字文字文字",
                       style: TextStyle(
                         fontSize: 14,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    Text(
+                    const Text(
                       "文字文字文字文字文字",
                       style: TextStyle(
                         fontSize: 12,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    Text(
+                    const Text(
                       "文字文字文字文字文字文字文字文字文字文字",
                       style: TextStyle(
                         fontSize: 12,
@@ -150,7 +150,7 @@ class RcmdManga extends StatelessWidget {
             4,
             (index) => SliverMainAxisGroup(
               slivers: [
-                SliverAppBar(
+                const SliverAppBar(
                   title: Text("新书强推"),
                 ),
                 SliverGrid.count(
@@ -160,7 +160,7 @@ class RcmdManga extends StatelessWidget {
                   childAspectRatio: 3 / 5,
                   children: List.generate(
                     6,
-                    (index) => Column(
+                    (index) => const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Expanded(
@@ -195,22 +195,22 @@ class RcmdManga extends StatelessWidget {
           ),
           SliverMainAxisGroup(
             slivers: [
-              SliverAppBar(
+              const SliverAppBar(
                 title: Text("畅销榜"),
               ),
               SliverList.separated(
                 itemCount: 20,
                 itemBuilder: (context, index) => ListTile(
-                  leading: AspectRatio(
+                  leading: const AspectRatio(
                     aspectRatio: 3 / 4,
                     child: Placeholder(),
                   ),
-                  title: Text(
+                  title: const Text(
                     "文字文字文字文字",
                     style: TextStyle(fontSize: 14),
                     overflow: TextOverflow.ellipsis,
                   ),
-                  subtitle: Column(
+                  subtitle: const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -227,7 +227,7 @@ class RcmdManga extends StatelessWidget {
                   ),
                   trailing: Text("$index"),
                 ),
-                separatorBuilder: (context, index) => SizedBox(
+                separatorBuilder: (context, index) => const SizedBox(
                   height: 8,
                 ),
               ),
