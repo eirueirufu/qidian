@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qidian/me/me.dart';
 import 'package:qidian/rcmd/rcmd.dart';
 import 'package:qidian/shelf/shelf.dart';
 
@@ -10,7 +11,7 @@ class App extends StatefulWidget {
 }
 
 class AppState extends State<App> with SingleTickerProviderStateMixin {
-  int selectedIndex = 1;
+  int selectedIndex = 4;
 
   @override
   void initState() {
@@ -34,11 +35,14 @@ class AppState extends State<App> with SingleTickerProviderStateMixin {
               const Recommend(),
               Container(),
               Container(),
-              Container(),
+              const Me(),
             ],
           ),
         ),
         bottomNavigationBar: NavigationBar(
+          surfaceTintColor: Colors.transparent,
+          elevation: 8,
+          shadowColor: Colors.black,
           selectedIndex: selectedIndex,
           onDestinationSelected: (value) {
             setState(
