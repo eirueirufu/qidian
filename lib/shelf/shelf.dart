@@ -12,9 +12,9 @@ class ShelfState extends State<Shelf> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           "今日已读233分钟",
-          style: TextStyle(fontSize: 14, letterSpacing: .2),
+          style: Theme.of(context).textTheme.titleSmall,
         ),
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
@@ -71,9 +71,9 @@ class ShelfState extends State<Shelf> {
               child: ListTile(
                 leading:
                     const AspectRatio(aspectRatio: 3 / 4, child: Placeholder()),
-                title: const Text(
+                title: Text(
                   "文字文字文字文字文字",
-                  style: TextStyle(fontSize: 14),
+                  style: Theme.of(context).textTheme.titleMedium,
                   overflow: TextOverflow.ellipsis,
                 ),
                 subtitle: SingleChildScrollView(
@@ -88,59 +88,50 @@ class ShelfState extends State<Shelf> {
                           borderRadius:
                               const BorderRadius.all(Radius.circular(8)),
                         ),
-                        child: const Text(
+                        child: Text(
                           "tag",
-                          style: TextStyle(fontSize: 12),
+                          style: Theme.of(context).textTheme.labelSmall,
                         ),
                       );
                     }),
                   ),
                 ),
-                trailing: Container(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-                  decoration: const BoxDecoration(
-                    color: Colors.black12,
-                    borderRadius: BorderRadius.all(Radius.circular(16)),
-                  ),
-                  child: const Text("签到"),
-                ),
               ),
             ),
-            const SliverAppBar(
+            SliverAppBar(
               pinned: true,
               titleSpacing: 0,
               title: Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 8,
                   ),
                   Text(
                     "最近阅读",
-                    style: TextStyle(fontSize: 12),
+                    style: Theme.of(context).textTheme.labelMedium,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 12,
                   ),
                   Text(
                     "浏览记录",
-                    style: TextStyle(fontSize: 12),
+                    style: Theme.of(context).textTheme.labelMedium,
                   ),
                 ],
               ),
               actions: [
                 Text(
                   "管理",
-                  style: TextStyle(fontSize: 12),
+                  style: Theme.of(context).textTheme.labelMedium,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 12,
                 ),
                 Text(
                   "筛选",
-                  style: TextStyle(fontSize: 12),
+                  style: Theme.of(context).textTheme.labelMedium,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 8,
                 ),
               ],
@@ -148,12 +139,14 @@ class ShelfState extends State<Shelf> {
             SliverList.builder(
               itemCount: 20,
               itemBuilder: (context, index) {
-                return const ListTile(
-                  leading:
-                      AspectRatio(aspectRatio: 3 / 4, child: Placeholder()),
+                return ListTile(
+                  leading: const AspectRatio(
+                    aspectRatio: 3 / 4,
+                    child: Placeholder(),
+                  ),
                   title: Text(
                     "文字文字文字文字文字",
-                    style: TextStyle(fontSize: 16),
+                    style: Theme.of(context).textTheme.titleMedium,
                     overflow: TextOverflow.ellipsis,
                   ),
                   subtitle: Column(
@@ -161,17 +154,17 @@ class ShelfState extends State<Shelf> {
                     children: [
                       Text(
                         "文字文字文字文字文字",
-                        style: TextStyle(fontSize: 12, color: Colors.black54),
+                        style: Theme.of(context).textTheme.labelMedium,
                         overflow: TextOverflow.ellipsis,
                       ),
                       Text(
                         "文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字",
-                        style: TextStyle(fontSize: 12, color: Colors.black54),
+                        style: Theme.of(context).textTheme.labelSmall,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ),
-                  trailing: Column(
+                  trailing: const Column(
                     children: [Icon(Icons.more_horiz)],
                   ),
                 );

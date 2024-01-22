@@ -29,10 +29,10 @@ class RcmdManga extends StatelessWidget {
                 childAspectRatio: 3 / 4,
                 children: List.generate(
                   4,
-                  (index) => const Column(
+                  (index) => Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(
+                      const Expanded(
                         child: Placeholder(),
                       ),
                       Column(
@@ -40,12 +40,11 @@ class RcmdManga extends StatelessWidget {
                         children: [
                           Text(
                             "文字文字文字",
-                            style: TextStyle(fontSize: 14),
+                            style: Theme.of(context).textTheme.titleMedium,
                           ),
                           Text(
                             "文字文字文字文字文字",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
+                            style: Theme.of(context).textTheme.labelSmall,
                           ),
                         ],
                       ),
@@ -67,10 +66,10 @@ class RcmdManga extends StatelessWidget {
                 childAspectRatio: 3 / 5,
                 children: List.generate(
                   6,
-                  (index) => const Column(
+                  (index) => Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(
+                      const Expanded(
                         child: Placeholder(),
                       ),
                       Column(
@@ -78,18 +77,13 @@ class RcmdManga extends StatelessWidget {
                         children: [
                           Text(
                             "文字文字文字",
-                            style: TextStyle(
-                              fontSize: 14,
-                              overflow: TextOverflow.ellipsis,
-                            ),
+                            style: Theme.of(context).textTheme.titleSmall,
+                            overflow: TextOverflow.ellipsis,
                           ),
                           Text(
                             "文字文字文字文字文字",
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.black54,
-                              overflow: TextOverflow.ellipsis,
-                            ),
+                            style: Theme.of(context).textTheme.labelSmall,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ],
                       ),
@@ -119,27 +113,20 @@ class RcmdManga extends StatelessWidget {
                         child: Placeholder(),
                       ),
                     ),
-                    const Text(
+                    Text(
                       "文字文字文字",
-                      style: TextStyle(
-                        fontSize: 14,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                      style: Theme.of(context).textTheme.titleSmall,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    const Text(
+                    Text(
                       "文字文字文字文字文字",
-                      style: TextStyle(
-                        fontSize: 12,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                      style: Theme.of(context).textTheme.labelMedium,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    const Text(
+                    Text(
                       "文字文字文字文字文字文字文字文字文字文字",
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.black54,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                      style: Theme.of(context).textTheme.labelSmall,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ],
                 ),
@@ -160,10 +147,10 @@ class RcmdManga extends StatelessWidget {
                   childAspectRatio: 3 / 5,
                   children: List.generate(
                     6,
-                    (index) => const Column(
+                    (index) => Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Expanded(
+                        const Expanded(
                           child: Placeholder(),
                         ),
                         Column(
@@ -171,18 +158,13 @@ class RcmdManga extends StatelessWidget {
                           children: [
                             Text(
                               "文字文字文字",
-                              style: TextStyle(
-                                fontSize: 14,
-                                overflow: TextOverflow.ellipsis,
-                              ),
+                              style: Theme.of(context).textTheme.titleSmall,
+                              overflow: TextOverflow.ellipsis,
                             ),
                             Text(
                               "文字文字文字文字文字",
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.black54,
-                                overflow: TextOverflow.ellipsis,
-                              ),
+                              style: Theme.of(context).textTheme.labelSmall,
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ],
                         ),
@@ -205,22 +187,22 @@ class RcmdManga extends StatelessWidget {
                     aspectRatio: 3 / 4,
                     child: Placeholder(),
                   ),
-                  title: const Text(
-                    "文字文字文字文字",
-                    style: TextStyle(fontSize: 14),
+                  title: Text(
+                    "文字文字文字",
+                    style: Theme.of(context).textTheme.titleSmall,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  subtitle: const Column(
+                  subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         "文字文字文字文字文字",
-                        style: TextStyle(fontSize: 12, color: Colors.black54),
+                        style: Theme.of(context).textTheme.labelMedium,
                         overflow: TextOverflow.ellipsis,
                       ),
                       Text(
-                        "文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字",
-                        style: TextStyle(fontSize: 12, color: Colors.black54),
+                        "文字文字文字文字文字文字文字文字文字文字",
+                        style: Theme.of(context).textTheme.labelSmall,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ],
