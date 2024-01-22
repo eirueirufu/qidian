@@ -11,7 +11,7 @@ class App extends StatefulWidget {
 }
 
 class AppState extends State<App> with SingleTickerProviderStateMixin {
-  int selectedIndex = 4;
+  int selectedIndex = 1;
 
   @override
   void initState() {
@@ -40,9 +40,6 @@ class AppState extends State<App> with SingleTickerProviderStateMixin {
           ),
         ),
         bottomNavigationBar: NavigationBar(
-          surfaceTintColor: Colors.transparent,
-          elevation: 8,
-          shadowColor: Colors.black,
           selectedIndex: selectedIndex,
           onDestinationSelected: (value) {
             setState(
