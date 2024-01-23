@@ -52,16 +52,21 @@ class MeState extends State<Me> {
                           ),
                           Wrap(
                             children: List.generate(
-                              3,
-                              (index) => Container(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 4),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  color: Colors.black12,
-                                ),
-                                child: const Text("tag"),
-                              ),
+                              5,
+                              (index) => index % 2 == 1
+                                  ? const SizedBox(
+                                      width: 4,
+                                    )
+                                  : Container(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 4,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        color: Colors.black12,
+                                      ),
+                                      child: const Text("tag"),
+                                    ),
                             ),
                           ),
                         ],

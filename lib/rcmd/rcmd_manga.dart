@@ -20,6 +20,7 @@ class RcmdManga extends StatelessWidget {
           SliverMainAxisGroup(
             slivers: [
               const SliverAppBar(
+                titleSpacing: 0,
                 title: Text("小编精选"),
               ),
               SliverGrid.count(
@@ -57,6 +58,7 @@ class RcmdManga extends StatelessWidget {
           SliverMainAxisGroup(
             slivers: [
               const SliverAppBar(
+                titleSpacing: 0,
                 title: Text("新书强推"),
               ),
               SliverGrid.count(
@@ -96,6 +98,7 @@ class RcmdManga extends StatelessWidget {
           SliverMainAxisGroup(
             slivers: [
               const SliverAppBar(
+                titleSpacing: 0,
                 title: Text(
                   "文字文字文字",
                 ),
@@ -138,6 +141,7 @@ class RcmdManga extends StatelessWidget {
             (index) => SliverMainAxisGroup(
               slivers: [
                 const SliverAppBar(
+                  titleSpacing: 0,
                   title: Text("新书强推"),
                 ),
                 SliverGrid.count(
@@ -178,6 +182,7 @@ class RcmdManga extends StatelessWidget {
           SliverMainAxisGroup(
             slivers: [
               const SliverAppBar(
+                titleSpacing: 0,
                 title: Text("畅销榜"),
               ),
               SliverList.separated(
