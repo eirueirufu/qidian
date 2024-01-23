@@ -123,7 +123,7 @@ class RcmdNew extends StatelessWidget {
             child: BookListCard(),
           ),
           const ScrollGap(),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: BookSingleCard(),
           ),
           const ScrollGap(),
