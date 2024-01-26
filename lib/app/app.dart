@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qidian/explore/explore.dart';
 import 'package:qidian/listen/listen.dart';
 import 'package:qidian/me/me.dart';
 import 'package:qidian/rcmd/rcmd.dart';
@@ -12,7 +13,7 @@ class App extends StatefulWidget {
 }
 
 class AppState extends State<App> with SingleTickerProviderStateMixin {
-  int selectedIndex = 2;
+  int selectedIndex = 3;
 
   @override
   void initState() {
@@ -31,12 +32,12 @@ class AppState extends State<App> with SingleTickerProviderStateMixin {
         body: SafeArea(
           child: IndexedStack(
             index: selectedIndex,
-            children: [
-              const Shelf(),
-              const Recommend(),
-              const Listen(),
-              Container(),
-              const Me(),
+            children: const [
+              Shelf(),
+              Recommend(),
+              Listen(),
+              Explore(),
+              Me(),
             ],
           ),
         ),
