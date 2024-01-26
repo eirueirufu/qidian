@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qidian/explore/explore_author_follow.dart';
 
 class Explore extends StatefulWidget {
   const Explore({super.key});
@@ -13,10 +14,12 @@ class _ExploreState extends State<Explore> {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textScheme = Theme.of(context).textTheme;
+
     return DefaultTabController(
       length: 2,
+      initialIndex: 1,
       child: Scaffold(
-        appBar: TabBar(
+        appBar: const TabBar(
           tabs: [
             Tab(
               text: "关注",
@@ -26,124 +29,167 @@ class _ExploreState extends State<Explore> {
             ),
           ],
         ),
-        body: TabBarView(children: [
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 12),
-            child: ListView.separated(
+        body: TabBarView(
+          children: [
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 8),
+              child: ListView.separated(
                 itemBuilder: (context, index) =>
                     index == 0 || index == listLength - 1
                         ? Container()
-                        : AuthorFollow(),
-                separatorBuilder: (context, index) => SizedBox(height: 8),
-                itemCount: listLength),
-          ),
-          Container()
-        ]),
-      ),
-    );
-  }
-}
-
-class AuthorFollow extends StatelessWidget {
-  const AuthorFollow({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final textScheme = Theme.of(context).textTheme;
-    return Container(
-      padding: EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: colorScheme.primaryContainer,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "热门关注",
-            style: textScheme.titleSmall,
-          ),
-          Divider(),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CircleAvatar(
-                child: Icon(Icons.account_circle),
+                        : const AuthorFollow(),
+                separatorBuilder: (context, index) => const SizedBox(height: 8),
+                itemCount: listLength,
               ),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "文字",
-                      style: textScheme.bodyMedium,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    Text(
-                      "文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字",
-                      style: textScheme.bodySmall,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
-                ),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "关注",
-                  style: textScheme.bodyMedium,
-                ),
-              ),
-            ],
-          ),
-          Container(
-            height: 84,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: colorScheme.onPrimary,
             ),
-            padding: EdgeInsets.all(8),
-            child: Row(
-              children: [
-                AspectRatio(
-                  aspectRatio: 3 / 4,
-                  child: Placeholder(),
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "文字",
-                        style: textScheme.bodyMedium,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
+            // Container()
+            CustomScrollView(
+              slivers: [
+                SliverPadding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  sliver: DecoratedSliver(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: colorScheme.primaryContainer,
+                    ),
+                    sliver: SliverPadding(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      sliver: SliverGrid.count(
+                        mainAxisSpacing: 8,
+                        crossAxisSpacing: 8,
+                        crossAxisCount: 5,
+                        children: List.generate(
+                          10,
+                          (index) => Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Expanded(
+                                child: AspectRatio(
+                                  aspectRatio: 3 / 4,
+                                  child: Placeholder(),
+                                ),
+                              ),
+                              Text(
+                                "文字",
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: textScheme.titleSmall,
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Text(
-                        "文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字",
-                        style: textScheme.bodySmall,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
+                    ),
                   ),
-                )
+                ),
+                SliverPadding(
+                  padding: const EdgeInsets.all(8),
+                  sliver: SliverGrid.count(
+                    crossAxisSpacing: 8,
+                    crossAxisCount: 3,
+                    childAspectRatio: 2 / 1,
+                    children: List.generate(
+                      3,
+                      (index) => Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: colorScheme.primaryContainer,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "文字",
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: textScheme.titleSmall,
+                            ),
+                            Text(
+                              "文字",
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: textScheme.bodySmall,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SliverList.separated(
+                  itemCount: 8,
+                  itemBuilder: (context, index) => Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: colorScheme.primaryContainer,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            const Icon(
+                              Icons.account_circle_outlined,
+                              size: 32,
+                            ),
+                            const SizedBox(
+                              width: 8,
+                            ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "文字文字文字文字文字文字文字",
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: textScheme.bodyMedium,
+                                  ),
+                                  Text(
+                                    "文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字",
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: textScheme.bodySmall,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          "文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字",
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                          style: textScheme.bodyMedium,
+                        ),
+                        const SizedBox(height: 8),
+                        SizedBox(
+                          height: 100,
+                          child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) => const AspectRatio(
+                              aspectRatio: 3 / 4,
+                              child: Placeholder(),
+                            ),
+                            separatorBuilder: (context, index) =>
+                                const SizedBox(width: 8),
+                            itemCount: 10,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(height: 8),
+                ),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
