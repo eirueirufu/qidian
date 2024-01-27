@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qidian/book/book_details.dart';
 
 class BookHrzListCard extends StatefulWidget {
   final String title;
@@ -29,21 +30,27 @@ class BookHrzListCardState extends State<BookHrzListCard> {
               itemBuilder: (context, index) => Column(
                 children: List.generate(
                   3,
-                  (index) => const SizedBox(
+                  (index) => SizedBox(
                     width: 260,
                     height: 80,
                     child: ListTile(
-                      leading: LimitedBox(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const BookDetails(),
+                        ),
+                      ),
+                      leading: const LimitedBox(
                         child: AspectRatio(
                           aspectRatio: 3 / 4,
                           child: Placeholder(),
                         ),
                       ),
-                      title: Text(
+                      title: const Text(
                         "文字文字文字文字文字",
                         overflow: TextOverflow.ellipsis,
                       ),
-                      subtitle: Text(
+                      subtitle: const Text(
                         "文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字",
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,

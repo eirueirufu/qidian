@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qidian/book/book_details.dart';
 
 class BookGridTile extends StatefulWidget {
   final String title;
@@ -17,25 +18,33 @@ class BookGridTile extends StatefulWidget {
 class BookGridTileState extends State<BookGridTile> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const AspectRatio(
-          aspectRatio: 3 / 4,
-          child: Placeholder(),
+    return GestureDetector(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const BookDetails(),
         ),
-        Text(
-          widget.description,
-          maxLines: 2,
-          style: Theme.of(context).textTheme.labelLarge,
-          overflow: TextOverflow.ellipsis,
-        ),
-        Text(
-          widget.title,
-          maxLines: 1,
-          style: Theme.of(context).textTheme.labelMedium,
-          overflow: TextOverflow.ellipsis,
-        ),
-      ],
+      ),
+      child: Column(
+        children: [
+          const AspectRatio(
+            aspectRatio: 3 / 4,
+            child: Placeholder(),
+          ),
+          Text(
+            widget.description,
+            maxLines: 2,
+            style: Theme.of(context).textTheme.labelLarge,
+            overflow: TextOverflow.ellipsis,
+          ),
+          Text(
+            widget.title,
+            maxLines: 1,
+            style: Theme.of(context).textTheme.labelMedium,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ],
+      ),
     );
   }
 }

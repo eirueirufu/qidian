@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qidian/book/book_details.dart';
 
 class BookListTile extends StatefulWidget {
   final String title;
@@ -18,6 +19,12 @@ class BookListTileState extends State<BookListTile> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const BookDetails(),
+        ),
+      ),
       leading: const AspectRatio(
         aspectRatio: 3 / 4,
         child: Placeholder(),
