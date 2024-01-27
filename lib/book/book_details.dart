@@ -9,18 +9,13 @@ class BookDetails extends StatefulWidget {
 
 class _BookDetailsState extends State<BookDetails> {
   String? data;
-  Future fetchData() async {
+  Future<String> fetchData() async {
     if (data != null) {
-      return Future(() => data);
+      return data!;
     }
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
     data = "";
-  }
-
-  @override
-  void initState() {
-    fetchData();
-    super.initState();
+    return data!;
   }
 
   @override
@@ -31,14 +26,14 @@ class _BookDetailsState extends State<BookDetails> {
       body: FutureBuilder(
         future: fetchData(),
         builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
+          if (snapshot.hasError) {
+            return Text('错误: ${snapshot.error} ');
+          } else if (snapshot.hasData) {
+            return _buildDetails(textTheme, colorTheme);
+          } else {
+            return const Center(
               child: CircularProgressIndicator(),
             );
-          } else if (snapshot.hasError) {
-            return Text('错误: ${snapshot.error} ');
-          } else {
-            return _buildDetails(textTheme, colorTheme);
           }
         },
       ),
