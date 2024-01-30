@@ -28,6 +28,11 @@ class AppState extends State<App> with SingleTickerProviderStateMixin {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        brightness: Brightness.dark,
+      ),
+      themeMode: ThemeMode.system,
       home: Scaffold(
         body: SafeArea(
           child: IndexedStack(
